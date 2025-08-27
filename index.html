@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Recipe Finder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-utensils me-2"></i> MuskanRecipes
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#" data-section="home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-section="pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-section="history">History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-section="email">Email</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="favorites-link">
+                                <i class="fa-solid fa-heart me-1"></i> Favorites
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content text-center">
+            <h1 class="display-3 fw-bold mb-4">Discover Culinary Excellence</h1>
+            <p class="lead mb-5">Find gourmet recipes from around the world</p>
+            <div class="search-box input-group mx-auto">
+                <input type="text" id="search-input" class="form-control form-control-lg" placeholder="Search for recipes...">
+                <button id="search-btn" class="btn btn-warning btn-lg">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
+            </div>
+            <div id="loading" class="mt-4 d-none">
+                <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Finding the best recipes for you...</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-5">
+        <section id="home">
+            <div class="trending-section mb-5">
+                <h2 class="mb-4"><i class="fa-solid fa-fire me-2"></i> Trending Now</h2>
+                <div class="trending-recipes row g-4" id="trending-recipes"></div>
+            </div>
+            
+            <div class="results-header mb-4">
+                <h2 id="results-count"><i class="fa-solid fa-star me-2"></i> Popular Recipes</h2>
+            </div>
+            <section id="recipe-results" class="recipe-grid row g-4"></section>
+        </section>
+        
+        <section id="favorites" class="hidden">
+            <h2>Your Favorite Recipes</h2>
+            <div class="favorites-grid"></div>
+        </section>
+        
+        <section id="pricing" class="hidden container">
+            <h2>Premium Recipe Plans</h2>
+            <div class="pricing-plans">
+                <div class="plan">
+                    <h3>Basic</h3>
+                    <p>Free</p>
+                    <ul>
+                        <li>Access to 5,000+ recipes</li>
+                        <li>Basic search functionality</li>
+                        <li>Save up to 10 favorites</li>
+                    </ul>
+                    <button class="btn">Get Started</button>
+                </div>
+                <div class="plan">
+                    <h3>Pro Chef</h3>
+                    <p>$9.99/month</p>
+                    <ul>
+                        <li>20,000+ premium recipes</li>
+                        <li>Advanced search filters</li>
+                        <li>Unlimited favorites</li>
+                        <li>Meal planning tools</li>
+                        <li>Ad-free experience</li>
+                    </ul>
+                    <button class="btn">Upgrade Now</button>
+                </div>
+                <div class="plan">
+                    <h3>Gourmet Elite</h3>
+                    <p>$24.99/month</p>
+                    <ul>
+                        <li>All Pro Chef features</li>
+                        <li>Personalized recipe recommendations</li>
+                        <li>VIP customer support</li>
+                        <li>Exclusive cooking classes</li>
+                        <li>Early access to new features</li>
+                    </ul>
+                    <button class="btn">Join Elite</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="history" class="hidden container">
+            <h2>Our Culinary Journey</h2>
+            <p>Luxury Recipe Finder was founded in 2018 by a team of passionate chefs and food enthusiasts. What began as a small recipe blog has grown into a premier culinary platform serving millions of food lovers worldwide.</p>
+            <p>Our journey started with a simple mission: to make gourmet cooking accessible to everyone. Today, we continue that mission by partnering with world-class chefs and culinary experts to bring you the finest recipes from around the globe.</p>
+            <div class="milestones">
+                <div class="milestone">
+                    <h3>2018</h3>
+                    <p>Founded in a small Parisian kitchen with just 50 recipes</p>
+                </div>
+                <div class="milestone">
+                    <h3>2020</h3>
+                    <p>Launched mobile app with 1M+ downloads in first year</p>
+                </div>
+                <div class="milestone">
+                    <h3>2022</h3>
+                    <p>Featured in Michelin Guide as top recipe platform</p>
+                </div>
+                <div class="milestone">
+                    <h3>2025</h3>
+                    <p>Serving over 5 million monthly users worldwide</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="email" class="hidden container">
+            <h2>Join Our Culinary Community</h2>
+            <p>Subscribe to our newsletter for exclusive recipes, cooking tips, and special offers.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    
+   <footer class="footer bg-dark text-white pt-5 pb-4">
+  <div class="container text-center text-md-start">
+    <div class="row">
+      <!-- Brand + About -->
+      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h5 class="mb-4 fw-bold">
+          <i class="fa-solid fa-utensils me-2 text-warning"></i>MuskanRecipes
+        </h5>
+        <p>
+          Discover gourmet recipes and elevate your cooking. Bringing culinary
+          excellence from kitchens around the world, right to your home.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 fw-bold">Quick Links</h6>
+        <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Pricing</a></p>
+        <p><a href="#" class="text-white text-decoration-none">History</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Email</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-5 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 fw-bold">Contact</h6>
+        <p><i class="fa-solid fa-envelope me-2 text-warning"></i> support@luxerecipes.com</p>
+        <p><i class="fa-solid fa-phone me-2 text-warning"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-location-dot me-2 text-warning"></i> Paris, France</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center mt-3">
+      <p class="mb-0">&copy; 2025 MuskanRecipes | Crafted with <i class="fa-solid fa-heart text-danger"></i> for food lovers</p>
+    </div>
+  </div>
+</footer>
+
+    
+    <!-- Bootstrap & other scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+  
