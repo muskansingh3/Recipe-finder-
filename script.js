@@ -101,6 +101,10 @@ function showFavorites(e) {
     }
 }
 
+function hanleSubscption(subscripton) {
+    alert(`You have Subscribed ${subscripton}`)
+}
+
 // Show home view
 function showHome() {
     // Hide other sections
