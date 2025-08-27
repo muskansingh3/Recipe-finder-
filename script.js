@@ -101,7 +101,7 @@ function showFavorites(e) {
     }
 }
 
-function hanleSubscption(subscripton) {
+function handleSubscption(subscripton) {
     alert(`You have Subscribed ${subscripton}`)
 }
 
